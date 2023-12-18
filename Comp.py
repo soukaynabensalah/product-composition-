@@ -63,9 +63,7 @@ class ProduitCompose(Produit):
     def __str__(self):
         return f"Produit composé {self.nom} ({self.code}) - Frais de fabrication : {self.__fraisFabrication}"
 
-    def getPrixHT(self):
-        prix_ht_total = sum(comp.produit.getPrixHT() * comp.quantite for comp in self.__listeConstituants)
-        return prix_ht_total + self.__fraisFabrication
+    
 
 
 # Test
@@ -80,4 +78,4 @@ p3 = ProduitCompose("P3", "00t3", 9, [comp1, comp2])
 print(p1)
 print(p2)
 print(p3)
-print(f"Prix hors taxe de {p3.getnom}: {p3.getPrixHT()}")
+
